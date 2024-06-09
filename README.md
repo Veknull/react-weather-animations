@@ -1,12 +1,14 @@
-# Getting Started with Create React App
+# React Weather Animations
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React application that displays different animations for various weather conditions such as Rain, Clear, Thunderstorm, Haze/Mist, Snow, and Night.
+The animations were developed as part of the Live Weather App that I built.
+The animations cycle automatically every 1.5 seconds.
 
-## Available Scripts
+## Run the app
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` or `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
