@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import RainAnimation from './components/RainAnimation';
+import ClearAnimation from './components/ClearAnimation';
+import ThunderstormAnimation from './components/ThunderstormAnimation';
+import HazeMistAnimation from './components/HazeMistAnimation';
+import SnowAnimation from './components/SnowAnimation';
+import NightAnimation from './components/NightAnimation';
+
+const components = [
+  RainAnimation,
+  ClearAnimation,
+  ThunderstormAnimation,
+  HazeMistAnimation,
+  SnowAnimation,
+  NightAnimation
+];
 
 function App() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % components.length);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
+
+  const Component = components[index];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Component />
     </div>
   );
 }
